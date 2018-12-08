@@ -1,15 +1,7 @@
 import React from "react";
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  CardTitle,
-  Row,
-  Col,
-  Button
-} from "reactstrap";
+import { Card, CardHeader, CardBody, CardTitle, Row, Col } from "reactstrap";
 
-import FormInputs from "../components/FormInputs";
+import Index from "../components/Index";
 import Post from "../components/Post";
 
 class Dashboard extends React.Component {
@@ -25,44 +17,7 @@ class Dashboard extends React.Component {
               <CardBody>
                 <div>
                   <section>
-                    <FormInputs
-                      ncols={["col-md-6 pr-1", "col-md-6 pl-1"]}
-                      proprieties={[
-                        {
-                          label: "Title",
-                          inputProps: {
-                            type: "text",
-                            placeholder: "Name what you found"
-                          }
-                        },
-                        {
-                          label: "Found at",
-                          inputProps: {
-                            type: "text",
-                            placeholder: "The place you found it!"
-                          }
-                        }
-                      ]}
-                    />
-                    <FormInputs
-                      ncols={["col-md-12"]}
-                      proprieties={[
-                        {
-                          label: "Description",
-                          inputProps: {
-                            type: "textarea",
-                            placeholder: "Here can be your description"
-                          }
-                        }
-                      ]}
-                    />
-                    <Row>
-                      <div className="update ml-auto mr-auto">
-                        <Button color="primary" round>
-                          Post new found Item
-                        </Button>
-                      </div>
-                    </Row>
+                    <Post />
                   </section>
                 </div>
               </CardBody>
@@ -79,7 +34,7 @@ class Dashboard extends React.Component {
               <CardBody>
                 <div>
                   <section>
-                    <h1>Hello World!</h1>
+                    <Index />
                   </section>
                 </div>
               </CardBody>
