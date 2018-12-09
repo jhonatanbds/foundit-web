@@ -15,7 +15,7 @@ export default class Index extends Component {
         this.setState({ items: response.data });
       })
       .catch(function(error) {
-        console.log(error);
+        console.log("Error getting items: " + error);
       });
   }
   tabRow() {

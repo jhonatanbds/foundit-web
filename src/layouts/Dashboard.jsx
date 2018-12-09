@@ -2,6 +2,7 @@ import React from "react";
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
 import { Route, Switch, Redirect } from "react-router-dom";
+import axios from "axios";
 
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
@@ -20,6 +21,26 @@ class Dashboard extends React.Component {
     };
   }
   componentDidMount() {
+    const admin = {
+      email: "admin@email.com",
+      password: "eutenhoumviolaorosa"
+    };
+
+    let user = {};
+
+    axios({
+      method: "post",
+      url: "http://localhost:3000/login",
+      data: admin
+    })
+      .then(response => {
+        user = response.data;
+        console.log(user);
+      })
+      .catch(function(error) {
+        console.log("ERRO: " + error);
+      });
+
     if (navigator.platform.indexOf("Win") > -1) {
       ps = new PerfectScrollbar(this.refs.mainPanel);
       document.body.classList.toggle("perfect-scrollbar-on");
