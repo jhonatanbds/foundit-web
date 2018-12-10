@@ -21,6 +21,11 @@ class Dashboard extends React.Component {
     };
   }
   componentDidMount() {
+    axios.defaults.baseURL = "http://localhost:3000/";
+    axios.defaults.headers.post["Content-Type"] =
+      "application/x-www-form-urlencoded";
+    axios.defaults.headers.common["Allow-Control-Allow-Origin"] = "*";
+
     const admin = {
       email: "admin@email.com",
       password: "eutenhoumviolaorosa"
@@ -40,6 +45,8 @@ class Dashboard extends React.Component {
       .catch(function(error) {
         console.log("ERRO: " + error);
       });
+
+    axios.defaults.headers.common["Authorization"] = user.token;
 
     if (navigator.platform.indexOf("Win") > -1) {
       ps = new PerfectScrollbar(this.refs.mainPanel);

@@ -15,8 +15,8 @@ class Item extends Component {
   }
   render() {
     return (
-      <ListGroupItem header={this.props.obj.title}>
-        Description <Button />
+      <ListGroupItem header="Titulo">
+        {this.props.obj.title} <Button />
       </ListGroupItem>
     );
   }

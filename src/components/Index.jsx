@@ -9,8 +9,13 @@ export default class Index extends Component {
     this.state = { items: [] };
   }
   componentDidMount() {
-    axios
-      .get("http://localhost:3000/item")
+    axios({
+      method: "get",
+      url: "http://localhost:3000/item",
+      headers: {
+        "Allow-Control-Allow-Origin": "*"
+      }
+    })
       .then(response => {
         this.setState({ items: response.data });
       })

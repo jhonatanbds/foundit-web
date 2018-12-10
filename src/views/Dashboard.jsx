@@ -12,7 +12,7 @@ class Dashboard extends React.Component {
           <Col md={12}>
             <Card className="demo-icons">
               <CardHeader>
-                <CardTitle>Create a new Item</CardTitle>
+                <CardTitle>Post a finding</CardTitle>
               </CardHeader>
               <CardBody>
                 <div>
