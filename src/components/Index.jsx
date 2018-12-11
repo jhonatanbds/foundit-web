@@ -9,12 +9,10 @@ export default class Index extends Component {
     this.state = { items: [] };
   }
   componentDidMount() {
+    console.log(axios.defaults.headers.common);
     axios({
       method: "get",
-      url: "http://localhost:3000/item",
-      headers: {
-        "Allow-Control-Allow-Origin": "*"
-      }
+      url: "/item"
     })
       .then(response => {
         this.setState({ items: response.data });
@@ -24,7 +22,6 @@ export default class Index extends Component {
       });
   }
   tabRow() {
-    console.log(this.state.items);
     if (this.state.items.length > 0) {
       return this.state.items.map((object, i) => <Item obj={object} key={i} />);
     } else {

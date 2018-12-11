@@ -40,11 +40,7 @@ class Post extends Component {
       place: this.state.place,
       date: this.state.date
     };
-    axios({
-      method: "post",
-      url: "http://localhost:3000/item",
-      data: obj
-    }).then(res => console.log(res.data));
+    axios.post("/item", obj).then(res => console.log(res.data));
 
     console.log(`title: ${this.state.title}`);
     this.setState({
