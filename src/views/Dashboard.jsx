@@ -34,7 +34,7 @@ class Dashboard extends React.Component {
               <CardBody>
                 <div>
                   <section>
-                    <Index />
+                    <Index owner={false} />
                   </section>
                 </div>
               </CardBody>

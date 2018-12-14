@@ -4,6 +4,7 @@ import { Card, CardHeader, CardBody, CardTitle, Row, Col } from "reactstrap";
 import CardAuthor from "../components/CardAuthor.jsx";
 import FormInputs from "../components/FormInputs.jsx";
 import Button from "../components/CustomButton.jsx";
+import Index from "../components/Index"
 
 import damirBosnjak from "../assets/img/damir-bosnjak.jpg";
 import mike from "../assets/img/default-avatar.png";
@@ -141,6 +142,23 @@ class User extends React.Component {
                     </div>
                   </Row>
                 </form>
+              </CardBody>
+            </Card>
+          </Col>
+        </Row>
+        <Row>
+          <Col md={12}>
+            <Card>
+              <CardHeader>
+                <CardTitle>My founded items</CardTitle>
+                <p className="card-category">PLACEHOLDER</p>
+              </CardHeader>
+              <CardBody>
+                <div>
+                  <section>
+                    <Index owner={true}/>
+                  </section>
+                </div>
               </CardBody>
             </Card>
           </Col>

@@ -23,7 +23,7 @@ export default class Index extends Component {
   }
   tabRow() {
     if (this.state.items.length > 0) {
-      return this.state.items.map((object, i) => <Item obj={object} key={i} />);
+      return this.state.items.map((object, i) => <Item owner={this.props.owner} obj={object} key={i} />);
     } else {
       return <h2>Nothing to show</h2>;
     }

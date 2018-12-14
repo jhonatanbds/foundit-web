@@ -17,7 +17,7 @@ class Post extends Component {
     this.state = {
       title: "",
       description: "",
-      place: "",
+      foundPlace: "",
       date: new Date()
     };
     this.handleChange = this.handleChange.bind(this);
@@ -37,7 +37,7 @@ class Post extends Component {
     const obj = {
       title: this.state.title,
       description: this.state.description,
-      place: this.state.place,
+      foundPlace: this.state.foundPlace,
       date: this.state.date
     };
     axios.post("/item", obj).then(res => console.log(res.data));
@@ -46,13 +46,15 @@ class Post extends Component {
     this.setState({
       title: "",
       description: "",
-      place: "",
+      foundPlace: "",
       date: new Date()
     });
+
+    window.location.reload();
   }
 
   render() {
-    const { title, description, place, date } = this.state;
+    const { title, description, foundPlace, date } = this.state;
     return (
       <Container>
         <Form className="form" onSubmit={e => this.submitForm(e)}>
@@ -74,13 +76,13 @@ class Post extends Component {
             </Col>
             <Col md={4}>
               <FormGroup>
-                <Label>Place</Label>
+                <Label>foundPlace</Label>
                 <Input
                   type="title"
-                  name="place"
-                  id="exampleplace"
+                  name="foundPlace"
+                  id="examplefoundPlace"
                   placeholder="Place where you found"
-                  value={place}
+                  value={foundPlace}
                   onChange={e => {
                     this.handleChange(e);
                   }}
