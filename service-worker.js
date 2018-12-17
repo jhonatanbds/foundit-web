@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
 importScripts(
-  "/foundit-web/precache-manifest.9d52749f9413225ec0a584a686a37432.js"
+  "/foundit-web/precache-manifest.1197d3ad98e320b7c56eeac8480716d6.js"
 );
 
 workbox.clientsClaim();
